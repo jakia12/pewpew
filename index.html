@@ -19,6 +19,73 @@
   <link href="css/colors_standard.min.css" rel="stylesheet" />
   <link href="css/template.min.css" rel="stylesheet" />
   <link href="css/joomla-alert.min.css" rel="stylesheet" />
+  <style>
+   @font-face {
+    font-family: 'GentyDemo'; 
+    src: url('./fonts/GentyDemo-Regular.ttf');
+   }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #5841D8;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+    }
+
+    .nav-links a:hover {
+      background-color: #bd0202;
+      border-radius: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
   <style
     nonce="YjJjMDc1ZDljNDg4ZjU1OGMzNGZlN2ZkMTc0OGEyZGE4NTZjZDJhYjE2MmUwMThkYWYyYzZkNTVjNmRiNWI3OTNkNzM2ZTYyZjhjMGMzNzBjOGE5MDMwY2FmMzdjZTgwNTcxMTZkYjg3ZTFmOTY2M2EwNWQ3NDcxNjlhMTk0Mjg=">
     :root {
@@ -3857,8 +3924,7 @@
 </head>
 <!--  -->
 
-<body style="background: #7f0000"
-  class="site com_content wrapper-static view-featured no-layout no-task itemid-101">
+<body style="background: #7f0000" class="site com_content wrapper-static view-featured no-layout no-task itemid-101">
   <header class="header container-header full-width"></header>
 
   <div class="site-grid">
@@ -3915,7 +3981,20 @@
                                     data-sstype="content" data-hasbackground="0">
                                     <div
                                       class="n2-ss-section-main-content n2-ss-layer-with-background n2-ss-layer-content n2-ow n-uc-UcSM7lNOh0K9-inner">
-                                      <div
+                                      <nav class="navbar">
+                                        <div class="logo">
+                                          <img style="width: 65px;" src="./images/logo.png" alt="">
+                                        </div>
+                                        <div class="nav-links" id="nav-links">
+                                          <a href="/">Home</a>
+                                          <a href="#socials">Socials</a>
+                                          <a href="buylink">Buy $PEWPEW</a>
+                                        </div>
+                                        <div class="hamburger" id="hamburger">
+                                          &#9776;
+                                        </div>
+                                      </nav>
+                                      <!-- <div
                                         class="n2-ss-layer n2-ow n2-ss-layer--block n2-ss-has-self-align n-uc-103823df79529"
                                         data-pm="normal" data-sstype="row">
                                         <div
@@ -4033,7 +4112,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
+                                      </div> -->
                                       <div
                                         class="n2-ss-layer n2-ow n2-ss-layer--block n2-ss-has-self-align n-uc-108016076b4dd"
                                         data-pm="normal" data-sstype="row">
@@ -4049,6 +4128,7 @@
                                                   <div id="n2-ss-7item9"
                                                     class="n2-font-c61bf3cb09bc763f75841477a37f68c6-hover n2-ss-item-content n2-ss-text n2-ow"
                                                     style="
+                                                    font-family: GentyDemo;
                                                         display: block;
                                                         color: #fff;
                                                       ">
@@ -4258,6 +4338,7 @@
                                                     style="display: block">
                                                     <a class="n2-ow n2-font-bd9c8eb7d0b28577ac139edf67f1b81d-hover"
                                                       style="
+                                                      font-family: GentyDemo;
                                                           display: block;
                                                           color: #fff;
                                                         "
@@ -4357,7 +4438,7 @@
                                         data-sstype="layer">
                                         <div id="n2-ss-9item1"
                                           class="n2-font-dc41c16042ce8c0c004df32256130c1d-hover n2-ss-item-content n2-ss-text n2-ow"
-                                          style="display: block; color: #fff">
+                                          style="display: block; color: #fff; font-family: GentyDemo;">
                                           How To Buy
                                         </div>
                                       </div>
@@ -4620,7 +4701,7 @@
                                         <div id="n2-ss-10item1"
                                           class="n2-font-dc41c16042ce8c0c004df32256130c1d-hover n2-ss-item-content n2-ss-text n2-ow"
                                           style="display: block; color: #fff">
-                                          <h2 class="title_txt">
+                                          <h2 style="font-family: GentyDemo;" class="title_txt">
                                             Tokenomics
                                           </h2>
                                         </div>
@@ -4745,7 +4826,7 @@
                                               display: block;
                                               color: #f0f4fb;
                                             ">
-                                          <h2 class="title_txt">Socials</h2>
+                                          <h2 style="font-family: GentyDemo;" class="title_txt">Socials</h2>
                                         </div>
                                       </div>
 
